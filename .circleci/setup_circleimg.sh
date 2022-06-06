@@ -8,7 +8,7 @@
 #
 
 codename=`grep VERSION_CODENAME /etc/os-release | grep -Eo '[a-z]+$'`
-if [ $codename == "stretch" ] || [ $codename == "buster" ] ; then
+if [ $codename == "stretch" ] || [ $codename == "buster" ] || [ -z "$codename" ] ; then
   sudo apt-get --allow-releaseinfo-change-suite update
 else
   sudo apt-get update
