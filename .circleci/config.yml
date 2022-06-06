@@ -188,7 +188,6 @@ workflows:
       - "gcc6"
       - "gcc7"
       - "gcclatest"
-      - "website-build"
       - "debian-stretch-gcc"
       - "debian-stretch-cmake"
       - "debian-stretch-python"
