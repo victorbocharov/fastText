@@ -7,7 +7,7 @@
 # LICENSE file in the root directory of this source tree.
 #
 
-if [ $(lsb_release -cs) == "stretch" ]; then
+if [ $(grep VERSION_CODENAME /etc/os-release | grep -Eo '[a-z]+$') == "stretch" ]; then
   sudo apt-get --allow-releaseinfo-change-suite update
 else
   sudo apt-get update
