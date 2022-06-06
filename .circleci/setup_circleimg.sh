@@ -7,7 +7,8 @@
 # LICENSE file in the root directory of this source tree.
 #
 
-if [ $(grep VERSION_CODENAME /etc/os-release | grep -Eo '[a-z]+$') == "stretch" ]; then
+codename=`grep VERSION_CODENAME /etc/os-release | grep -Eo '[a-z]+$'`
+if [ $codename == "stretch" ] || [ $codename == "buster" ] ; then
   sudo apt-get --allow-releaseinfo-change-suite update
 else
   sudo apt-get update
